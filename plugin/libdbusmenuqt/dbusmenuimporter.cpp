@@ -175,7 +175,13 @@ public:
 
     void updateActionLabel(QAction *action, const QVariant &value)
     {
-        QString text = swapMnemonicChar(value.toString(), '_', '&');
+        // I commented out the following line of code to disable menu mnemonic,
+        // because menu mnemonics make it impossible for me to use 'Alt' key as a shortcut key.
+        // For example, when I work with IntelliJ Idea, I press 'Shift+Alt+U',
+        // the menu mnemonic causes the menu to pop up, which is not what I want.
+        // QString text = swapMnemonicChar(value.toString(), '_', '&');
+
+        QString text = value.toString();
         action->setText(text);
     }
 
