@@ -179,9 +179,10 @@ public:
         // For example, when I work with IntelliJ Idea, I press 'Shift+Alt+U',
         // the menu mnemonic causes the menu to pop up, which is not what I want.
         QString before = value.toString();
-        QString after = swapMnemonicChar(before, '&', '-');
-        qDebug() << "updateActionLabel - string before swap: " << before << Qt::endl;
-        qDebug() << "updateActionLabel - string after swap: " << after << Qt::endl;
+        QString after = before;
+        after.remove(QChar('_')).remove(QChar('&'));
+        qDebug() << "updateActionLabel - string before: " << before << Qt::endl;
+        qDebug() << "updateActionLabel - string after: " << after << Qt::endl;
         action->setText(after);
     }
 
