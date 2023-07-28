@@ -181,8 +181,6 @@ public:
         QString before = value.toString();
         QString after = before;
         after.remove(QChar('_')).remove(QChar('&'));
-        qDebug() << "updateActionLabel - string before: " << before << Qt::endl;
-        qDebug() << "updateActionLabel - string after: " << after << Qt::endl;
         action->setText(after);
     }
 

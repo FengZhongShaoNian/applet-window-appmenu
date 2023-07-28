@@ -296,6 +296,7 @@ void AppMenuModel::updateApplicationMenu(const QString &serviceName, const QStri
 
         // Directly return to disable Menu mnemonic, because menu mnemonics make it impossible for me to use Alt key as a shortcut modifier.
         // For example, when I work with IntelliJ Idea, I press 'Shift+Alt+U', the menu mnemonic causes the menu to pop up, which is not what I want.
+        qDebug() << "SLOT of DBusMenuImporter::actionActivationRequested - Directly return to disable Menu mnemonic" << Qt::endl;
         return;
 
         const auto actions = m_menu->actions();
